@@ -1,0 +1,193 @@
+<!doctype html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Pythonizr - Start a Python Boilerplate project in 15 seconds!</title>
+	<meta name="description" content="Pythonizr generates clean customizable python boilerplate code with just what you need to start quickly!">
+	<meta name="author" content="Akash Panchal">
+    <meta name="keywords" content="python,python project,boilerplate,python code,python generator,flask,python webserver,python web framework">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/tree-view.css">
+	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+	<div id="header-container">
+		<header class="wrapper clearfix">
+			<div id="title-container">
+				<h1 id="title">Pythonizr</h1>
+				<h2>Start a Python Boilerplate project in 15 seconds!</h2>
+			</div>
+			<div id="html5-logo-container">
+				<img src="img/opengraph-icon-200x200.png" alt="" />
+			</div>
+			<div id="follow-container">
+                    <p><a id="author" href="https://medium.com/@akashp1712" target="_blank">Akash Panchal</a></p>
+			</div>
+		</header>
+	</div>
+	<div id="main-container">
+		<div id="main" class="wrapper clearfix">
+			<div id="intro" class="clearfix">
+				<div id="badges" class="clearfix">
+					<ul>
+						<li><div class="badge-label">Python<br />3.7.1</div></li>
+					</ul>
+				</div>
+                <p>Oh yes, IDEs are missing this, but me!
+                    <br/>
+                    Pythonizr is a python boilerplate code generator to help you start coding right away!</p>
+			</div>
+			<h2 class="separator">
+				1 - Project-structure
+			</h2>
+			<div id="preconfig-section" class="clearfix">
+				<div class="preconfig-container initializr-background">
+					<button id="preconfig-classic" class="preconfig-block initializr-background clearfix">
+						<h3>Classic</h3>
+					</button>
+                    <div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
+				</div>
+				<div class="preconfig-container blank-background">
+					<button id="preconfig-custom" class="preconfig-block blank-background clearfix">
+						<h3>Custom</h3>
+					</button>
+					<div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
+				</div>
+				<div class="preconfig-container web-background">
+					<button id="preconfig-web" class="preconfig-block blank-background clearfix">
+						<h3>Web</h3>
+					</button>
+					<div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
+				</div>
+			</div>
+			<div id="hidden-section">
+				<h2 id="fine-tuning-separator" class="separator">
+					2 - Fine tuning
+				</h2>
+				<div id="customize-section" class="clearfix">
+					<div class="customize-section">
+						<h3>Basic</h3>
+						<label><input type="checkbox" value="setup_py">setup.py
+							<a class="more_info"><span class="tooltiptext">With provided sample package.</span></a>
+						</label>
+						<label><input type="checkbox" value="readme_rst">README.rst</label>
+						<label><input type="checkbox" value="requirements_txt">requirements.txt</label>
+						<label><input type="checkbox" value="manifest_in">MANIFEST.in</label>
+						<label><input type="checkbox" value="main_py">main.py</label>
+					</div>
+					<div class="customize-section">
+						<h3>Helpers</h3>
+						<label><input type="checkbox" value="gitignore">.gitignore</label>
+						<label><input type="checkbox" value="config_handler">config handler
+							<a class="more_info"><span class="tooltiptext">Ready to use config handler module to read config.ini file.</span></a>
+						</label>
+						<label><input type="checkbox" value="argparse">argparse
+							<a class="more_info"><span class="tooltiptext">Add argparse helper file</span></a>
+						</label>
+					</div>
+					<div class="customize-section">
+						<h3>License (LICENSE.txt)</h3>
+						<label><input type="radio" name="htmlcss" value="no_license">No License</label>
+						<label><input type="radio" name="htmlcss" value="empty_license">Empty File
+							<a class="more_info"><span class="tooltiptext">Empty License File</span></a>
+						</label>
+						<label><input type="radio" name="htmlcss" value="mit_license">MIT License <a target="_blank" href="https://opensource.org/licenses/MIT">(<u>source</u>)</a>
+							<a class="more_info"><span class="tooltiptext">A short and simple permissive license with conditions only requiring preservation of copyright and license notices.
+							</span></a>
+						</label>
+						<label><input type="radio" name="htmlcss" value="apache_license">Apache License 2.0 <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0.html">(<u>source</u>)</a>
+							<a class="more_info"><span class="tooltiptext">A permissive license whose main conditions require preservation of copyright and license notices.
+							</span></a>
+						</label>
+						<label><input type="radio" name="htmlcss" value="gnu_license">GNU GPLv3 <a target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.txt">(<u>source</u>)</a>
+							<a class="more_info"><span class="tooltiptext">Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license.
+							</span></a>
+						</label>
+					</div>
+                    <div class="customize-section">
+						<h3>Web Development</h3>
+						<label><input type="checkbox" name="htmlcss" value="flask_single_module">Flask Single module
+							<a class="more_info"><span class="tooltiptext">For small python flask project</span></a>
+						</label>
+					</div>
+				</div>
+                <h2 class="separator">3 - Download</h2>
+                <div class="customize-section">
+                    <h3>What's inside?</h3>
+                    <div class="tree-block">
+                        <!--This section will be fed by javascript.-->
+                    </div>
+                </div>
+				<div id="download-section" class="clearfix">
+					<a id="download-link" href="#" download>Download it!</a>
+				</div>
+			</div>
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
+
+	<div id="about-container">
+		<div class="wrapper">
+			<div id="github-container" class="clearfix">
+				<img src="img/github-logo.png" alt="Github logo" />
+				<div id="github-repositories">
+					<h3>Github Repositories</h3>
+					<ul>
+						<li><a target="_blank" href="https://github.com/akashp1712/pythonizr-server">The builder itself</a></li>
+						<li><a target="_blank" href="https://github.com/akashp1712/pythonizr-website">This page</a></li>
+					</ul>
+
+					<h3>Thanks to these guys</h3>
+					<ul>
+						<li><a target="_blank" href="https://github.com/pypa/sampleproject">pypa sample project</a></li>
+						<li><a target="_blank" href="https://github.com/verekia/initializr-website">Initializr website</a></li>
+						<li><a target="_blank" href="https://github.com/altryne/extensionizr">Extensionizr webapp</a></li>
+					</ul>
+				</div>
+			</div>
+			<article id="docs">
+				<h3>About Pythonizr</h3>
+				<p>Pythonizr is here to kick-start the development of your new Python project.
+					It generates necessary boilerplate code to get started with. Also, provided a few helpers to add in a project.</p>
+
+				<h3>Based on other *izr</h3>
+				<p>This project is <strong>heavily</strong> inspired by
+					<a target="_blank" href="http://initializr.com">Initializr by Jonathan Verrecchia</a> and 
+					<a target="_blank" href="https://extensionizr.com">Extensionizr by Alex Wolkov</a>
+				</p>
+
+				<h3>What next?</h3>
+				<p>Let's add as much boilerplate and helper code as possible and find quality time for coffee!</p>
+				
+				<h3>Contact</h3>
+				<p>Email at <span>pythonizr@gmail.com</span>, or tweet me <a target="_blank" href="https://twitter.com/#!/akashp1712">@akashp1712</a>.</p>
+			
+			</article>
+
+		</div>
+	</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+<script src="js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount','UA-73098164-2'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
