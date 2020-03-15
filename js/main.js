@@ -6,21 +6,15 @@ $(function(){
 	var config = {
 
 		defaultModules:{
-			custom: [
-			        'no_license',
-			        'main_py'
-			        ],
-			classic: [
-                     'setup_py',
-                     'readme_rst',
-                     'requirements_txt',
-                     'no_license',
-                     'manifest_in',
-                     'gitignore'
-                     ],
-            web: [
-                    'flask_single_module',
-                    'requirements_txt'
+			regression: [
+			        'data_loading',
+			        'train_test_split',
+			        'linear_reg'
+                ],
+			classification: [
+			        'data_loading',
+			        'train_test_split',
+			        'naive_bayes'
                  ]
 		},
 		baseUrl:'https://pythonizr.com:80/builder?'
@@ -40,14 +34,12 @@ $(function(){
 	var flask_single_list = ['app.py', 'config.py'];
 
 	var preModules = {
-            'main_py': 'main.py', 'setup_py': setup_list, 'readme_rst': 'README.rst',
-            'requirements_txt': 'requirements.txt', 'manifest_in': 'MANIFEST.in',
-            'gitignore': '.gitignore', 'config_handler': config_list,
-            'argparse': 'argparse_helper.py',
-            'mit_license': 'LICENSE.txt', 'apache_license': 'LICENSE.txt',
-            'gnu_license': 'LICENSE.txt', 'empty_license': 'LICENSE.txt',
-            'flask_single_module': flask_single_list
-        }
+            'data_loading': 'Data loading', 'train_test_split': 'Train-Test split',
+            'standardization': 'Standardization', 'normalization': 'Normalization',
+            'linear_reg': 'Linear Regression', 'svm': 'Support Vector Machine',
+            'naive_bayes': 'Naive Bayes', 'knn': 'K-Nearest Neighbors',
+            }
+
 
 	/**********
 	   EVENTS
@@ -58,16 +50,12 @@ $(function(){
 	});
 
 	
-	$('#preconfig-custom').click(function(){
-		fillDefaultModules('custom');
+	$('#preconfig-regression').click(function(){
+		fillDefaultModules('regression');
 	});
 
-	$('#preconfig-classic').click(function(){
-		fillDefaultModules('classic');
-	});
-
-	$('#preconfig-web').click(function(){
-		fillDefaultModules('web');
+	$('#preconfig-classification').click(function(){
+		fillDefaultModules('classification');
 	});
 
 	/*********
@@ -127,7 +115,7 @@ $(function(){
 
         var parentUL=document.createElement('ul');
         parentUL.className = "tree";
-        generateChildTree(parentUL, [{'pythonizr.zip': treeChildList}])
+        generateChildTree(parentUL, [{'pythonizr.py': treeChildList}])
 
         var x = document.getElementsByClassName("tree-block");
         x[0].innerHTML = '';
@@ -217,7 +205,7 @@ $(function(){
 	/***********
 	    MAIN
 	 ***********/
-	
+
 	if ($('input:checked').length > 0)
 		$('#hidden-section').fadeIn(0);
 

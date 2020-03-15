@@ -7,10 +7,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Pythonizr - Start a Python Boilerplate project in 15 seconds!</title>
-	<meta name="description" content="Pythonizr generates clean customizable python boilerplate code with just what you need to start quickly!">
+	<title>Pythonizr - Start a Machine Learning project in 15 seconds!</title>
+	<meta name="description" content="Pythonizr generates clean customizable Machine Learning python code with just what you need to start quickly!">
 	<meta name="author" content="Akash Panchal">
-    <meta name="keywords" content="python,python project,boilerplate,python code,python generator,flask,python webserver,python web framework">
+    <meta name="keywords" content="python,Machine Learning, ML project, scikit-learn, python code,python generator">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="stylesheet" href="css/style.css">
@@ -21,8 +21,8 @@
 	<div id="header-container">
 		<header class="wrapper clearfix">
 			<div id="title-container">
-				<h1 id="title">Pythonizr</h1>
-				<h2>Start a Python Boilerplate project in 15 seconds!</h2>
+				<h1 id="title">Pythonizr2</h1>
+				<h2>Start a Machine Learning project in 15 seconds!</h2>
 			</div>
 			<div id="html5-logo-container">
 				<img src="img/opengraph-icon-200x200.png" alt="" />
@@ -37,85 +37,59 @@
 			<div id="intro" class="clearfix">
 				<div id="badges" class="clearfix">
 					<ul>
-						<li><div class="badge-label">Python<br />3.7.1</div></li>
+						<li><div class="badge-label">scikit-learn<br />0.22.1<br/></div></li>
 					</ul>
 				</div>
-                <p>Oh yes, IDEs are missing this, but me!
-                    <br/>
-                    Pythonizr is a python boilerplate code generator to help you start coding right away!</p>
+				<br/>
+                <p>Pythonizr is a machine learning boilerplate code generator to help you start coding right away!<br/>
+					The project requires <b>scikit-learn</b> library for python. You can install using <a>requirements.txt</a> file</p>
 			</div>
 			<h2 class="separator">
-				1 - Project-structure
+				1 - Pick Model Type
 			</h2>
 			<div id="preconfig-section" class="clearfix">
 				<div class="preconfig-container initializr-background">
-					<button id="preconfig-classic" class="preconfig-block initializr-background clearfix">
-						<h3>Classic</h3>
+					<button id="preconfig-regression" class="preconfig-block initializr-background clearfix">
+						<h3>Regression</h3>
 					</button>
                     <div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
 				</div>
-				<div class="preconfig-container blank-background">
-					<button id="preconfig-custom" class="preconfig-block blank-background clearfix">
-						<h3>Custom</h3>
-					</button>
-					<div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
-				</div>
 				<div class="preconfig-container web-background">
-					<button id="preconfig-web" class="preconfig-block blank-background clearfix">
-						<h3>Web</h3>
+					<button id="preconfig-classification" class="preconfig-block blank-background clearfix">
+						<h3>Classification</h3>
 					</button>
-					<div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
 				</div>
 			</div>
 			<div id="hidden-section">
 				<h2 id="fine-tuning-separator" class="separator">
-					2 - Fine tuning
+					2 - Model Selection
 				</h2>
 				<div id="customize-section" class="clearfix">
 					<div class="customize-section">
-						<h3>Basic</h3>
-						<label><input type="checkbox" value="setup_py">setup.py
-							<a class="more_info"><span class="tooltiptext">With provided sample package.</span></a>
+						<h3>Pre-Processing</h3>
+						<label><input type="checkbox" value="data_loading">Data loading
+							<a class="more_info"><span class="tooltiptext">TODO: more info</span></a>
 						</label>
-						<label><input type="checkbox" value="readme_rst">README.rst</label>
-						<label><input type="checkbox" value="requirements_txt">requirements.txt</label>
-						<label><input type="checkbox" value="manifest_in">MANIFEST.in</label>
-						<label><input type="checkbox" value="main_py">main.py</label>
+						<label><input type="checkbox" value="train_test_split">Train-Test split</label>
+						<b>Data Preparation</b>
+						<label><input type="radio" name="data_preparation" value="standardization" value="standardization">Standardization</label>
+						<label><input type="radio" name="data_preparation" value="normalization" value="normalization">Normalization</label>
+						<label><input type="radio" name="data_preparation" value="normalization" value="none">None</label>
 					</div>
 					<div class="customize-section">
-						<h3>Helpers</h3>
-						<label><input type="checkbox" value="gitignore">.gitignore</label>
-						<label><input type="checkbox" value="config_handler">config handler
-							<a class="more_info"><span class="tooltiptext">Ready to use config handler module to read config.ini file.</span></a>
-						</label>
-						<label><input type="checkbox" value="argparse">argparse
-							<a class="more_info"><span class="tooltiptext">Add argparse helper file</span></a>
-						</label>
+						<h3>Model</h3>
+						<b>Regression</b>
+						<label><input type="radio" name="regression_models" value="linear_reg">Linear Regression</label>
+						<label><input type="radio" name="regression_models" value="svm">Support Vector Machine</label>
+
+						<b>Classification</b>
+						<label><input type="radio" name="clasification_models" value="naive_bayes">Naive Bayes</label>
+						<label><input type="radio" name="clasification_models" value="knn">K-Nearest Neighbors (KNN)</label>
 					</div>
 					<div class="customize-section">
-						<h3>License (LICENSE.txt)</h3>
-						<label><input type="radio" name="htmlcss" value="no_license">No License</label>
-						<label><input type="radio" name="htmlcss" value="empty_license">Empty File
-							<a class="more_info"><span class="tooltiptext">Empty License File</span></a>
-						</label>
-						<label><input type="radio" name="htmlcss" value="mit_license">MIT License <a target="_blank" href="https://opensource.org/licenses/MIT">(<u>source</u>)</a>
-							<a class="more_info"><span class="tooltiptext">A short and simple permissive license with conditions only requiring preservation of copyright and license notices.
-							</span></a>
-						</label>
-						<label><input type="radio" name="htmlcss" value="apache_license">Apache License 2.0 <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0.html">(<u>source</u>)</a>
-							<a class="more_info"><span class="tooltiptext">A permissive license whose main conditions require preservation of copyright and license notices.
-							</span></a>
-						</label>
-						<label><input type="radio" name="htmlcss" value="gnu_license">GNU GPLv3 <a target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.txt">(<u>source</u>)</a>
-							<a class="more_info"><span class="tooltiptext">Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license.
-							</span></a>
-						</label>
-					</div>
-                    <div class="customize-section">
-						<h3>Web Development</h3>
-						<label><input type="checkbox" name="htmlcss" value="flask_single_module">Flask Single module
-							<a class="more_info"><span class="tooltiptext">For small python flask project</span></a>
-						</label>
+						<h3>Post-processing (coming soon..)</h3>
+						<label><input type="checkbox" value="gitignore" disabled="disabled">Evaluate Performance</label>
+						<label><input type="checkbox" value="gitignore" disabled="disabled">Model Tuning</label>
 					</div>
 				</div>
                 <h2 class="separator">3 - Download</h2>
@@ -176,7 +150,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="js/script.js"></script>
+<script src="js/main.js"></script>
 <script>
 	var _gaq=[['_setAccount','UA-73098164-2'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
