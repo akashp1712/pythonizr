@@ -52,10 +52,14 @@ $(function(){
 	
 	$('#preconfig-regression').click(function(){
 		fillDefaultModules('regression');
+		$('#regression-models').show();
+		$('#classification-models').hide();
 	});
 
 	$('#preconfig-classification').click(function(){
 		fillDefaultModules('classification');
+		$('#regression-models').hide();
+		$('#classification-models').show();
 	});
 
 	/*********
