@@ -15,6 +15,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/tree-view.css">
+	<link rel="stylesheet" href="css/pipeline.css">
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 <body>
@@ -103,8 +104,38 @@
                         <!--This section will be fed by javascript.-->
                     </div>
                 </div>
-				<div id="download-section" class="clearfix">
-					<a id="download-link" href="#" download>Download it!</a>
+                <div class="section">
+                    <section class="container">
+                      <div class="container__sources">
+
+                        <div>
+                          <h3 class="pipeline">Data</h3>
+                          <p class="pipeline">Contentful</p>
+                          <p class="pipeline">Drupal</p>
+                          <p class="pipeline">WordPress</p>
+                        </div>
+
+                        <svg viewBox="0 0 100 80"><line x1="5" x2="100" y1="70" y2="70"></line></svg>
+
+                        <div>
+                          <h3 class="pipeline">Training</h3>
+                          <p class="pipeline">Documentation, Posts, etc.</p>
+                        </div>
+
+                        <svg viewBox="0 0 100 80">
+                            <line x1="5" x2="100" y1="70" y2="70"></line>
+                        </svg>
+
+                        <div>
+                          <h3 class="pipeline">Evaluation</h3>
+                          <p class="pipeline">None</p>
+                        </div>
+
+                      </div>
+                    </section>
+                </div>
+                <div id="download-section" class="clearfix">
+					<a id="download-link" href="#" onclick="download()">Download it!</a>
 				</div>
 			</div>
 		</div> <!-- #main -->
@@ -131,21 +162,21 @@
 			</div>
 			<article id="docs">
 				<h3>About Pythonizr</h3>
-				<p>Pythonizr is here to kick-start the development of your new Python project.
-					It generates necessary boilerplate code to get started with. Also, provided a few helpers to add in a project.</p>
+				<p>Pythonizr is here to kick-start the development of your next ML project.
+					It generates necessary boilerplate code which you can run right away.</p>
 
 				<h3>Based on other *izr</h3>
 				<p>This project is <strong>heavily</strong> inspired by
-					<a target="_blank" href="http://initializr.com">Initializr by Jonathan Verrecchia</a> and 
+					<a target="_blank" href="http://initializr.com">Initializr by Jonathan Verrecchia</a> and
 					<a target="_blank" href="https://extensionizr.com">Extensionizr by Alex Wolkov</a>
 				</p>
 
 				<h3>What next?</h3>
 				<p>Let's add as much boilerplate and helper code as possible and find quality time for coffee!</p>
-				
+
 				<h3>Contact</h3>
 				<p>Email at <span>pythonizr@gmail.com</span>, or tweet me <a target="_blank" href="https://twitter.com/#!/akashp1712">@akashp1712</a>.</p>
-			
+
 			</article>
 
 		</div>
