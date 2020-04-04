@@ -1,0 +1,13 @@
+{
+  "dataLoading": [
+    "# Load red wine data.",
+    "dataset_url = '' #TODO: set the url or local reference",
+    "data = pd.read_csv(dataset_url, sep=';')"
+  ],
+  "trainTestSplit": [
+    "# Split data into training and test sets",
+    "y = data.FEATURE_NAME #TODO:repalce FEATURE_NAME with the one you want to predict",
+    "X = data.drop('FEATURE_NAME', axis=1) #TODO: remove the FEATURE_NAME from the data",
+    "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123, stratify=y)"
+  ]
+}

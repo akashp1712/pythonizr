@@ -13,10 +13,11 @@
     <meta name="keywords" content="python,Machine Learning, ML project, scikit-learn, python code,python generator">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/tree-view.css">
-	<link rel="stylesheet" href="css/pipeline.css">
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+	<link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" href="resources/css/tree-view.css">
+	<link rel="stylesheet" href="resources/css/pipeline.css">
+	<link rel="stylesheet" href="resources/css/highlight-theme.css">
+
 </head>
 <body>
 	<div id="header-container">
@@ -26,7 +27,7 @@
 				<h2>Start a Machine Learning project in 15 seconds!</h2>
 			</div>
 			<div id="html5-logo-container">
-				<img src="img/opengraph-icon-200x200.png" alt="" />
+				<img src="resources/img/opengraph-icon-200x200.png" alt="" />
 			</div>
 			<div id="follow-container">
                     <p><a id="author" href="https://medium.com/@akashp1712" target="_blank">Akash Panchal</a></p>
@@ -66,18 +67,18 @@
 					2 - Model Selection
 				</h2>
 				<div id="customize-section" class="clearfix">
-					<div class="customize-section">
+					<div id="pre-processing" class="customize-section">
 						<h3>Pre-Processing</h3>
-						<label><input type="checkbox" value="data_loading">Data loading
+						<label><input type="checkbox" value="dataLoading">Data loading
 							<a class="more_info"><span class="tooltiptext">TODO: more info</span></a>
 						</label>
-						<label><input type="checkbox" value="train_test_split">Train-Test split</label>
+						<label><input type="checkbox" value="trainTestSplit">Train-Test split</label>
 						<b>Data Preparation</b>
-						<label><input type="radio" name="data_preparation" value="standardization" value="standardization">Standardization</label>
-						<label><input type="radio" name="data_preparation" value="normalization" value="normalization">Normalization</label>
-						<label><input type="radio" name="data_preparation" value="normalization" value="none">None</label>
+						<label><input type="radio" name="data_preparation" value="standardization">Standardization</label>
+						<label><input type="radio" name="data_preparation" value="normalization">Normalization</label>
+						<label><input type="radio" name="data_preparation" value="none">None</label>
 					</div>
-					<div class="customize-section">
+					<div id="models" class="customize-section">
 						<h3>Model</h3>
 						<div id="regression-models">
 							<b>Regression</b>
@@ -91,52 +92,53 @@
 							<label><input type="radio" name="clasification_models" value="knn">K-Nearest Neighbors (KNN)</label>
 						</div>
 					</div>
-					<div class="customize-section">
+					<div id="post-processing" class="customize-section">
 						<h3>Post-processing (coming soon..)</h3>
 						<label><input type="checkbox" value="gitignore" disabled="disabled">Evaluate Performance</label>
 						<label><input type="checkbox" value="gitignore" disabled="disabled">Model Tuning</label>
 					</div>
 				</div>
-                <h2 class="separator">3 - Download</h2>
-                <div class="customize-section">
-                    <h3>What's inside?</h3>
-                    <div class="tree-block">
-                        <!--This section will be fed by javascript.-->
-                    </div>
-                </div>
+                <h2 class="separator">3 - Code</h2>
                 <div class="section">
                     <section class="container">
                       <div class="container__sources">
 
-                        <div>
-                          <h3 class="pipeline">Data</h3>
-                          <p class="pipeline">Contentful</p>
-                          <p class="pipeline">Drupal</p>
-                          <p class="pipeline">WordPress</p>
+                        <div id="data-pipe" class="step">
+                          <h3>Data</h3>
+                          <p>Contentful</p>
+                          <p>Drupal</p>
+                          <p>WordPress</p>
                         </div>
 
                         <svg viewBox="0 0 100 80"><line x1="5" x2="100" y1="70" y2="70"></line></svg>
 
-                        <div>
+                        <div id="training-pipe" class="step">
                           <h3 class="pipeline">Training</h3>
-                          <p class="pipeline">Documentation, Posts, etc.</p>
+                          <p>Documentation, Posts, etc.</p>
                         </div>
 
                         <svg viewBox="0 0 100 80">
                             <line x1="5" x2="100" y1="70" y2="70"></line>
                         </svg>
 
-                        <div>
+                        <div id="evaluation-pipe" class="step">
                           <h3 class="pipeline">Evaluation</h3>
-                          <p class="pipeline">None</p>
+                          <p>None</p>
                         </div>
 
                       </div>
                     </section>
                 </div>
-                <div id="download-section" class="clearfix">
-					<a id="download-link" href="#" onclick="download()">Download it!</a>
-				</div>
+                <!--<div id="download-section" class="clearfix">
+					<a id="download-link" href="#" onclick="download()">View Code!</a>
+				</div>-->
+                <div>
+                <pre id='codeblock'>
+                  <code id='code' class='python'></code>
+                    <!--TODO: Add copy button to copy the code-->
+                </pre>
+
+            </div>
 			</div>
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
@@ -144,7 +146,7 @@
 	<div id="about-container">
 		<div class="wrapper">
 			<div id="github-container" class="clearfix">
-				<img src="img/github-logo.png" alt="Github logo" />
+				<img src="resources/img/github-logo.png" alt="Github logo" />
 				<div id="github-repositories">
 					<h3>Github Repositories</h3>
 					<ul>
@@ -184,13 +186,20 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="js/main.js"></script>
+<!--<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>-->
+<script src="resources/js/main.js"></script>
 <script>
 	var _gaq=[['_setAccount','UA-73098164-2'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--Highlight JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.configure({useBR: true});
 </script>
 
 <!--[if lt IE 7 ]>
