@@ -29,21 +29,13 @@ $(function(){
         dataPreProcessing = data;
     });
 
+    var dataModels;
+	$.getJSON( "resources/data/models.json", function(data) {
+        dataModels = data;
+    });
+
 	var codeList = [];
 	var pipelineData = {};
-
-	// vars to hold files(string) and folders (dictionary of a single key:value(list) pair)
-	var setup_list = ['setup.py', {'sample': ['__init__.py','main.py']}, {'test': ['test_basic.py']}];
-	var config_list = [{'config': ['__init__.py','cfg.ini', 'cfg_handler.py']}];
-	var flask_single_list = ['app.py', 'config.py'];
-
-	var preModules = {
-            'data_loading': 'Data loading', 'train_test_split': 'Train-Test split',
-            'standardization': 'Standardization', 'normalization': 'Normalization',
-            'linear_reg': 'Linear Regression', 'svm': 'Support Vector Machine',
-            'naive_bayes': 'Naive Bayes', 'knn': 'K-Nearest Neighbors',
-            }
-
 
 	/**********
 	   EVENTS
@@ -52,7 +44,6 @@ $(function(){
 	$('input').click(function(){
 		update();
 	});
-
 	
 	$('#preconfig-regression').click(function(){
 		fillDefaultModules('regression');
@@ -79,25 +70,32 @@ $(function(){
 		update();
 		$('#hidden-section').fadeIn('slow');
 	}
-	
+
 	function update(){
 		updateModules();
 		updateCode();
 		updatePipeline();
 	}
-	
+
 	function updateModules(){
 		codeList = [];
 		pipelineData = {};
 
-       pipelineData["pre-processing"] = [];
+        pipelineData["pre-processing"] = [];
 		$("#pre-processing").find("input:checked").each(function() {
-            codeList.push(dataPreProcessing[$(this).val()]);
-            pipelineData["pre-processing"].push($(this).val());
+		    var value = $(this).val();
+		    console.log(value)
+		    if (value != "none") {
+                codeList.push(dataPreProcessing[value]);
+                pipelineData["pre-processing"].push(value);
+            }
         });
 
+        pipelineData["models"] = [];
         $("#models").find("input:checked").each(function() {
-            // TODO: do same as above
+            var value = $(this).val();
+            codeList.push(dataModels[value]);
+            pipelineData["models"].push(value);
         });
 
         $("#post-processing").find("input:checked").each(function() {
