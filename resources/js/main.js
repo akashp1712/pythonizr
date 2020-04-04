@@ -84,7 +84,6 @@ $(function(){
         pipelineData["pre-processing"] = [];
 		$("#pre-processing").find("input:checked").each(function() {
 		    var value = $(this).val();
-		    console.log(value)
 		    if (value != "none") {
                 codeList.push(dataPreProcessing[value]);
                 pipelineData["pre-processing"].push(value);
@@ -107,13 +106,13 @@ $(function(){
 
         var codeFull = [];
 		for (var i = 0, code; code = codeList[i++];){
-		    if (i != 0) { codeFull = codeFull.concat(["",""]); }
+		    if (i != 1) { codeFull = codeFull.concat(["",""]); }
 		    codeFull = codeFull.concat(code);
 		}
 
         displayData(codeFull);
 
-         function displayData(codeLines) {
+        function displayData(codeLines) {
             // Display the data
             var codeElem = "";
 
@@ -123,7 +122,7 @@ $(function(){
 
             $("#code").html(codeElem);
             $('pre code').each(function(i, e) {hljs.highlightBlock(e);}); // highlight the code
-	    }
+        }
     }
 
     function updatePipeline() {
