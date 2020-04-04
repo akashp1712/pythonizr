@@ -1,0 +1,26 @@
+{
+  "linearReg": [
+    "# Create linear regression object",
+    "linear_reg = LinearRegression()",
+    "# Train the model using the training sets",
+    "linear_reg.fit(X_train, y_train)"
+  ],
+  "logisticReg": [
+    "# Create logistic regression object",
+    "logistic_reg = LogisticRegression()",
+    "# Train the model using the training sets",
+    "logistic_reg.fit(X_train, y_train)"
+  ],
+  "decisionTree": [
+    "# Create tree object",
+    "tree_reg = DecisionTreeRegressor()",
+    "# Train the model using the training sets",
+    "tree_reg.fit(X_train, y_train)"
+  ],
+  "naiveBayes": [
+
+  ],
+  "knn": [
+
+  ]
+}
