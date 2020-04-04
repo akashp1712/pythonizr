@@ -42,13 +42,18 @@
   stroke-dasharray: 2px 20px;
   animation: animateline 5s linear both infinite;
 }
-h3.pipeline {
+
+.container .step {
+  width: 150px;
+}
+
+.container h3{
   font-size: 1.1rem;
   color: #411fb2;
   margin: 0;
   padding: 0;
 }
-p.pipeline {
+.container p{
   font-size: 0.95rem;
   font-weight: 300;
   margin: 0;
@@ -63,7 +68,7 @@ p.pipeline {
 }
 .container__sources:before {
   background: #4B8BBE;
-  content: 'End-to-End';
+  content: 'Pipeline';
 }
 .container__sources div {
   text-align: left;
