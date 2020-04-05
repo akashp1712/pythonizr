@@ -14,23 +14,22 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="stylesheet" href="resources/css/style.css">
-	<link rel="stylesheet" href="resources/css/tree-view.css">
 	<link rel="stylesheet" href="resources/css/pipeline.css">
 	<link rel="stylesheet" href="resources/css/highlight-theme.css">
-
 </head>
+
 <body>
 	<div id="header-container">
 		<header class="wrapper clearfix">
 			<div id="title-container">
 				<h1 id="title">Pythonizr2</h1>
 				<h2>Start a Machine Learning project in 15 seconds!</h2>
-			</div>
+            </div>
 			<div id="html5-logo-container">
 				<img src="resources/img/opengraph-icon-200x200.png" alt="" />
 			</div>
 			<div id="follow-container">
-                    <p><a id="author" href="https://medium.com/@akashp1712" target="_blank">Akash Panchal</a></p>
+                <p><a id="author" href="https://medium.com/@akashp1712" target="_blank">Akash Panchal</a></p>
 			</div>
 		</header>
 	</div>
@@ -89,8 +88,9 @@
 
 						<div id="classification-models">
 							<b>Classification</b>
-							<label><input type="radio" name="clasification_models" value="naiveBayes">Naive Bayes</label>
+							<label><input type="radio" name="clasification_models" value="svm">SVM</label>
 							<label><input type="radio" name="clasification_models" value="knn">K-Nearest Neighbors (KNN)</label>
+							<label><input type="radio" name="clasification_models" value="k-means">K-Means</label>
 						</div>
 					</div>
 					<div id="post-processing" class="customize-section">
@@ -103,30 +103,7 @@
                 <div class="section">
                     <section class="container">
                       <div class="container__sources">
-
-                        <div id="data-pipe" class="step">
-                          <h3>Data</h3>
-                          <p>Contentful</p>
-                          <p>Drupal</p>
-                          <p>WordPress</p>
-                        </div>
-
-                        <svg viewBox="0 0 100 80"><line x1="5" x2="100" y1="70" y2="70"></line></svg>
-
-                        <div id="training-pipe" class="step">
-                          <h3 class="pipeline">Training</h3>
-                          <p>Documentation, Posts, etc.</p>
-                        </div>
-
-                        <svg viewBox="0 0 100 80">
-                            <line x1="5" x2="100" y1="70" y2="70"></line>
-                        </svg>
-
-                        <div id="evaluation-pipe" class="step">
-                          <h3 class="pipeline">Evaluation</h3>
-                          <p>None</p>
-                        </div>
-
+                        <!-- The pipeline visual will be generated here by the javascript -->
                       </div>
                     </section>
                 </div>
