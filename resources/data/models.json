@@ -1,26 +1,59 @@
 {
-  "linearReg": [
-    "# Create linear regression object",
-    "linear_reg = LinearRegression()",
-    "# Train the model using the training sets",
-    "linear_reg.fit(X_train, y_train)"
-  ],
-  "logisticReg": [
-    "# Create logistic regression object",
-    "logistic_reg = LogisticRegression()",
-    "# Train the model using the training sets",
-    "logistic_reg.fit(X_train, y_train)"
-  ],
-  "decisionTree": [
-    "# Create tree object",
-    "tree_reg = DecisionTreeRegressor()",
-    "# Train the model using the training sets",
-    "tree_reg.fit(X_train, y_train)"
-  ],
-  "naiveBayes": [
-
-  ],
-  "knn": [
-
-  ]
+  "name": "Training",
+  "data": {
+    "linearReg": {
+      "name": "Linear Regression",
+      "code": [
+        "# Create linear regression object",
+        "linear_reg = LinearRegression()",
+        "# Train the model using the training sets",
+        "linear_reg.fit(X_train, y_train)"
+      ]
+    },
+    "logisticReg": {
+      "name": "Logistic Regression",
+      "code": [
+        "# Create logistic regression object",
+        "logistic_reg = LogisticRegression()",
+        "# Train the model using the training sets",
+        "logistic_reg.fit(X_train, y_train)"
+      ]
+    },
+    "decisionTree": {
+      "name": "Decision Tree",
+      "code": [
+        "# Create tree object",
+        "tree_reg = DecisionTreeRegressor()",
+        "# Train the model using the training sets",
+        "tree_reg.fit(X_train, y_train)"
+      ]
+    },
+    "svm": {
+      "name": "SVM",
+      "code": [
+        "# Create SVM classification object",
+        "svm_model = svm.svc()",
+        "# Train the model using the training sets",
+        "svm_model.fit(X_train, y_train)"
+      ]
+    },
+    "knn": {
+      "name": "KNN",
+      "code": [
+        "# Create KNeighbors classifier object model",
+        "kn_model = KNeighborsClassifier(n_neighbors=6) # 5 is default",
+        "# Train the model using the training sets",
+        "kn_model.fit(X_train, y_train)"
+      ]
+    },
+    "k-means": {
+      "name": "K-Means",
+      "code": [
+        "# Create KMeans classifier object model",
+        "kmeans_model = KMeans(n_clusters=4, random_state=0)",
+        "# Train the model using the training sets",
+        "kmeans_model.fit(X_train)"
+      ]
+    }
+  }
 }
