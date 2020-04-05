@@ -3,12 +3,13 @@ $(function(){
 	/************
 	    CONFIG
 	 ************/
+	 // TODO: decide on filling default modules or nor
 	var config = {
 
 		defaultModules:{
 			regression: [
-			        'data_loading',
-			        'train_test_split',
+			        'dataLoading',
+			        'trainTestSplit',
 			        'linear_reg'
                 ],
 			classification: [
@@ -24,6 +25,7 @@ $(function(){
 	   VARIABLES
 	 ************/
 
+    // TODO: Display loading screen till these variables get loaded
 	var dataPreProcessing;
 	$.getJSON( "resources/data/pre-processing.json", function(data) {
         dataPreProcessing = data;
@@ -81,7 +83,7 @@ $(function(){
 		codeList = [];
 		pipelineData = {};
 
-        pipelineData["pre-processing"] = [];
+        pipelineData["pre-processing"] = [dataPreProcessing["name"]];
 		$("#pre-processing").find("input:checked").each(function() {
 		    var value = $(this).val();
 		    if (value != "none") {
@@ -90,7 +92,7 @@ $(function(){
             }
         });
 
-        pipelineData["models"] = [];
+        pipelineData["models"] = [dataModels["name"]];
         $("#models").find("input:checked").each(function() {
             var value = $(this).val();
             codeList.push(dataModels["data"][value]["code"]);
@@ -141,10 +143,9 @@ $(function(){
         x[0].innerHTML = '';
 
         var keys = Object.keys(pipelineData);
-
         var animatedLine = getAnimatedLine();
 
-        for (var i = 0, key; key = keys[i++];){
+        for (var i = 0, pipeKey; pipeKey = keys[i++];){
 		    if (i != 1) {
                 x[0].appendChild(animatedLine);
             }
@@ -153,15 +154,17 @@ $(function(){
             dataPipe.className = "step";
             dataPipe.innerHTML = '';
 
+            pipeData = pipelineData[pipeKey];
+
             var header = document.createElement('h3');
-            header.innerHTML="Data";
+            header.innerHTML = pipeData[0];
             dataPipe.appendChild(header);
 
-            pipelineData[key].forEach(function(value) {
+            for (var j = 1, value; value = pipeData[j++];) {
                 var p = document.createElement('p');
                 p.innerHTML = value;
                 dataPipe.appendChild(p);
-            });
+            }
 
             x[0].appendChild(dataPipe);
         }
