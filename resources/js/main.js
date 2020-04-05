@@ -19,7 +19,7 @@ $(function(){
 		},
 		baseUrl:'https://pythonizr.com:80/builder?'
 	};
-	
+
 	/************
 	   VARIABLES
 	 ************/
@@ -39,12 +39,12 @@ $(function(){
 
 	/**********
 	   EVENTS
-	 **********/	
+	 **********/
 
 	$('input').click(function(){
 		update();
 	});
-	
+
 	$('#preconfig-regression').click(function(){
 		fillDefaultModules('regression');
 		$('#regression-models').show();
@@ -60,10 +60,10 @@ $(function(){
 	/*********
 	   LOGIC
 	 *********/
-	
+
 	function fillDefaultModules(type){
 		$('input').attr('checked', false);
-				
+
 		for (var i = 0, curModule; curModule = config.defaultModules[type][i++];){
 			$('input[value=' + curModule +']').attr('checked', true);
 		};
@@ -85,16 +85,16 @@ $(function(){
 		$("#pre-processing").find("input:checked").each(function() {
 		    var value = $(this).val();
 		    if (value != "none") {
-                codeList.push(dataPreProcessing[value]);
-                pipelineData["pre-processing"].push(value);
+                codeList.push(dataPreProcessing["data"][value]["code"]);
+                pipelineData["pre-processing"].push(dataPreProcessing["data"][value]["name"]);
             }
         });
 
         pipelineData["models"] = [];
         $("#models").find("input:checked").each(function() {
             var value = $(this).val();
-            codeList.push(dataModels[value]);
-            pipelineData["models"].push(value);
+            codeList.push(dataModels["data"][value]["code"]);
+            pipelineData["models"].push(dataModels["data"][value]["name"]);
         });
 
         $("#post-processing").find("input:checked").each(function() {
@@ -127,19 +127,59 @@ $(function(){
 
     function updatePipeline() {
 
-        var dataPipe = document.getElementById("data-pipe");
-        dataPipe.innerHTML = '';
+		/*// make html component dynamic
+		<div id="data-pipe" class="step">
+                          <h3>Data</h3>
+                          <p>Contentful</p>
+                          <p>Drupal</p>
+                          <p>WordPress</p>
+                        </div>
 
-        var header = document.createElement('h3');
-        header.innerHTML="Data";
-        dataPipe.appendChild(header);
+        <svg viewBox="0 0 100 80"><line x1="5" x2="100" y1="70" y2="70"></line></svg>*/
 
-        pipelineData["pre-processing"].forEach(function(value) {
-            var p = document.createElement('p');
-            p.innerHTML = value;
-            dataPipe.appendChild(p);
-		});
+        var x = document.getElementsByClassName("container__sources");
+        x[0].innerHTML = '';
 
+        var keys = Object.keys(pipelineData);
+
+        var animatedLine = getAnimatedLine();
+
+        for (var i = 0, key; key = keys[i++];){
+		    if (i != 1) {
+                x[0].appendChild(animatedLine);
+            }
+
+            var dataPipe=document.createElement('div');
+            dataPipe.className = "step";
+            dataPipe.innerHTML = '';
+
+            var header = document.createElement('h3');
+            header.innerHTML="Data";
+            dataPipe.appendChild(header);
+
+            pipelineData[key].forEach(function(value) {
+                var p = document.createElement('p');
+                p.innerHTML = value;
+                dataPipe.appendChild(p);
+            });
+
+            x[0].appendChild(dataPipe);
+        }
+
+
+        function getAnimatedLine() {
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute('viewBox', "0 0 100 80");
+
+            var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+            line.setAttribute('x1', "5");
+            line.setAttribute('x2', "100");
+            line.setAttribute('y1', "70");
+            line.setAttribute('y2', "70");
+
+            svg.appendChild(line);
+            return svg;
+        }
     }
 
 	/***********
