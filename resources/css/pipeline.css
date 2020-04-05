@@ -45,6 +45,7 @@
 
 .container .step {
   width: 150px;
+  min-height: 100px;
 }
 
 .container h3{
