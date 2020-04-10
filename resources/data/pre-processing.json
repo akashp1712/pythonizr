@@ -3,6 +3,7 @@
   "data": {
     "dataLoading": {
       "name": "Data Loading",
+      "imports": ["import pandas as pd"],
       "code": [
         "# Load red wine data.",
         "dataset_url = '' #TODO: set the url or local reference",
@@ -11,6 +12,7 @@
     },
     "trainTestSplit": {
       "name": "Train Test Splitting",
+      "imports": ["from sklearn.model_selection import train_test_split"],
       "code": [
         "# Split data into training and test sets",
         "y = data.FEATURE_NAME #TODO:repalce FEATURE_NAME with the one you want to predict",
@@ -20,11 +22,13 @@
     },
     "standardization": {
       "name": "Standardization",
+      "imports": [],
       "code": [
       ]
     },
     "normalization": {
       "name": "Normalization",
+      "imports": [],
       "code": [
       ]
     }
