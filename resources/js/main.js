@@ -94,22 +94,23 @@ $(function(){
             codeList = [];
             pipelineData = {};
 
+            /*Add components from each module*/
             pipelineData["pre-processing"] = [dataPreProcessing["name"]];
             $("#pre-processing").find("input:checked").each(function() {
                 var value = $(this).val();
                 if (value != "none") {
-                    importList.push(dataPreProcessing["data"][value]["imports"]);
-                    codeList.push(dataPreProcessing["data"][value]["code"]);
-                    pipelineData["pre-processing"].push(dataPreProcessing["data"][value]["name"]);
+                    importList.push(dataPreProcessing["data"][value]["imports"]); // Add imports
+                    codeList.push(dataPreProcessing["data"][value]["code"]); // Add code
+                    pipelineData["pre-processing"].push(dataPreProcessing["data"][value]["name"]); // Add pipeline component
                 }
             });
 
             pipelineData["models"] = [dataModels["name"]];
             $("#models").find("input:checked").each(function() {
                 var value = $(this).val();
-                importList.push(dataModels["data"][value]["imports"]);
-                codeList.push(dataModels["data"][value]["code"]);
-                pipelineData["models"].push(dataModels["data"][value]["name"]);
+                importList.push(dataModels["data"][value]["imports"]); // Add imports
+                codeList.push(dataModels["data"][value]["code"]); // Add code
+                pipelineData["models"].push(dataModels["data"][value]["name"]); // Add pipeline component
             });
 
             $("#post-processing").find("input:checked").each(function() {
@@ -134,6 +135,7 @@ $(function(){
 
             displayData(codeFull);
 
+            // Display the list of code lines
             function displayData(codeLines) {
                 // Display the data
                 var codeElem = "";
@@ -147,7 +149,6 @@ $(function(){
             }
         }
 
-        // TODO: Optimize the function
         function updatePipeline() {
 
             var x = document.getElementsByClassName("container__sources");
@@ -158,25 +159,28 @@ $(function(){
 
             for (var i = 0, pipeKey; pipeKey = keys[i++];){
                 if (i != 1) {
+                   // Append the animated line before every pipe except first
                     x[0].appendChild(animatedLine);
                 }
 
+                // Create divv fr each block
                 var dataPipe=document.createElement('div');
                 dataPipe.className = "step";
                 dataPipe.innerHTML = '';
 
                 pipeData = pipelineData[pipeKey];
 
+                // Add header
                 var header = document.createElement('h3');
                 header.innerHTML = pipeData[0];
                 dataPipe.appendChild(header);
 
+                // Add each added element
                 for (var j = 1, value; value = pipeData[j++];) {
                     var p = document.createElement('p');
                     p.innerHTML = value;
                     dataPipe.appendChild(p);
                 }
-
                 x[0].appendChild(dataPipe);
             }
 
