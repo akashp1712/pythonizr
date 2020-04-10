@@ -3,6 +3,7 @@
   "data": {
     "linearReg": {
       "name": "Linear Regression",
+      "imports": ["from sklearn.linear_model import LinearRegression"],
       "code": [
         "# Create linear regression object",
         "linear_reg = LinearRegression()",
@@ -12,6 +13,7 @@
     },
     "logisticReg": {
       "name": "Logistic Regression",
+      "imports": ["from sklearn.linear_model import LogisticRegression"],
       "code": [
         "# Create logistic regression object",
         "logistic_reg = LogisticRegression()",
@@ -21,6 +23,7 @@
     },
     "decisionTree": {
       "name": "Decision Tree",
+      "imports": ["from sklearn.tree import DecisionTreeRegressor"],
       "code": [
         "# Create tree object",
         "tree_reg = DecisionTreeRegressor()",
@@ -30,6 +33,7 @@
     },
     "svm": {
       "name": "SVM",
+      "imports": ["from sklearn import svm"],
       "code": [
         "# Create SVM classification object",
         "svm_model = svm.svc()",
@@ -39,6 +43,7 @@
     },
     "knn": {
       "name": "KNN",
+      "imports": ["from sklearn.neighbors import KNeighborsClassifier"],
       "code": [
         "# Create KNeighbors classifier object model",
         "kn_model = KNeighborsClassifier(n_neighbors=6) # 5 is default",
@@ -48,6 +53,7 @@
     },
     "k-means": {
       "name": "K-Means",
+      "imports": ["from sklearn.cluster import KMeans"],
       "code": [
         "# Create KMeans classifier object model",
         "kmeans_model = KMeans(n_clusters=4, random_state=0)",
