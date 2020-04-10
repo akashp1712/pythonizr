@@ -3,22 +3,19 @@ $(function(){
 	/************
 	    CONFIG
 	 ************/
-	 // TODO: decide on filling default modules or nor
 	var config = {
-
 		defaultModules:{
 			regression: [
-			        'dataLoading',
-			        'trainTestSplit',
-			        'linear_reg'
-                ],
+                'dataLoading',
+                'trainTestSplit',
+                'linearReg'
+            ],
 			classification: [
-			        'data_loading',
-			        'train_test_split',
-			        'naive_bayes'
-                 ]
+                'dataLoading',
+                'trainTestSplit',
+                'svm'
+            ]
 		},
-		baseUrl:'https://pythonizr.com:80/builder?'
 	};
 
 	/************
@@ -80,6 +77,7 @@ $(function(){
 	}
 
 	function updateModules(){
+	    importList = [];
 		codeList = [];
 		pipelineData = {};
 
@@ -87,6 +85,7 @@ $(function(){
 		$("#pre-processing").find("input:checked").each(function() {
 		    var value = $(this).val();
 		    if (value != "none") {
+		        importList.push(dataPreProcessing["data"][value]["imports"]);
                 codeList.push(dataPreProcessing["data"][value]["code"]);
                 pipelineData["pre-processing"].push(dataPreProcessing["data"][value]["name"]);
             }
@@ -95,6 +94,7 @@ $(function(){
         pipelineData["models"] = [dataModels["name"]];
         $("#models").find("input:checked").each(function() {
             var value = $(this).val();
+            importList.push(dataModels["data"][value]["imports"]);
             codeList.push(dataModels["data"][value]["code"]);
             pipelineData["models"].push(dataModels["data"][value]["name"]);
         });
@@ -107,8 +107,15 @@ $(function(){
 	function updateCode() {
 
         var codeFull = [];
+
+        // Include all the imports
+        for (var i = 0, code; code = importList[i++];){
+		    codeFull = codeFull.concat(code);
+		}
+
+        // Include all the code
 		for (var i = 0, code; code = codeList[i++];){
-		    if (i != 1) { codeFull = codeFull.concat(["",""]); }
+		    codeFull = codeFull.concat([""]);
 		    codeFull = codeFull.concat(code);
 		}
 
@@ -127,17 +134,8 @@ $(function(){
         }
     }
 
+    // TODO: Optimize the function
     function updatePipeline() {
-
-		/*// make html component dynamic
-		<div id="data-pipe" class="step">
-                          <h3>Data</h3>
-                          <p>Contentful</p>
-                          <p>Drupal</p>
-                          <p>WordPress</p>
-                        </div>
-
-        <svg viewBox="0 0 100 80"><line x1="5" x2="100" y1="70" y2="70"></line></svg>*/
 
         var x = document.getElementsByClassName("container__sources");
         x[0].innerHTML = '';
