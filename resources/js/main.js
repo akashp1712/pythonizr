@@ -17,8 +17,8 @@ $(function(){
         })
     ).then(function() {
         if (dataPreProcessing && dataModels) {
-            loadMain();
-            $('#all-content').addClass('loaded');
+            loadMain(); // load main script
+            $('#all-content').addClass('loaded'); // Make the main content visible
         }
     });
 
@@ -156,32 +156,39 @@ $(function(){
 
             var keys = Object.keys(pipelineData);
             var animatedLine = getAnimatedLine();
+            var needLine = false;
 
             for (var i = 0, pipeKey; pipeKey = keys[i++];){
-                if (i != 1) {
-                   // Append the animated line before every pipe except first
-                    x[0].appendChild(animatedLine);
-                }
 
-                // Create divv fr each block
+                // Create div for each block
                 var dataPipe=document.createElement('div');
                 dataPipe.className = "step";
                 dataPipe.innerHTML = '';
 
                 pipeData = pipelineData[pipeKey];
 
-                // Add header
-                var header = document.createElement('h3');
-                header.innerHTML = pipeData[0];
-                dataPipe.appendChild(header);
+                if (pipeData.length > 1) { // Pipe has some function (1 is header)
 
-                // Add each added element
-                for (var j = 1, value; value = pipeData[j++];) {
-                    var p = document.createElement('p');
-                    p.innerHTML = value;
-                    dataPipe.appendChild(p);
+                    // Add header
+                    var header = document.createElement('h3');
+                    header.innerHTML = pipeData[0];
+                    dataPipe.appendChild(header);
+
+                    // Add each added element
+                    for (var j = 1, value; value = pipeData[j++];) {
+                        var p = document.createElement('p');
+                        p.innerHTML = value;
+                        dataPipe.appendChild(p);
+                    }
+
+                    if (needLine == true) {
+                       // Append the animated line before every pipe except first
+                        x[0].appendChild(animatedLine);
+                    }
+
+                    x[0].appendChild(dataPipe);
+                    needLine = true;
                 }
-                x[0].appendChild(dataPipe);
             }
 
 
