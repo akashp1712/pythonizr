@@ -44,7 +44,8 @@
 }
 
 .container .step {
-  width: 150px;
+  width: fit-content;
+  min-width: 150px;
   min-height: 100px;
 }
 
