@@ -15,7 +15,7 @@
       "imports": ["from sklearn.model_selection import train_test_split"],
       "code": [
         "# Split data into training and test sets",
-        "y = data.FEATURE_NAME #TODO:repalce FEATURE_NAME with the one you want to predict",
+        "y = data.FEATURE_NAME #TODO: repalce FEATURE_NAME with the one you want to predict",
         "X = data.drop('FEATURE_NAME', axis=1) #TODO: remove the FEATURE_NAME from the data",
         "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123, stratify=y)"
       ]
