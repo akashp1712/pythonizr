@@ -5,9 +5,8 @@
       "name": "Linear Regression",
       "imports": ["from sklearn.linear_model import LinearRegression"],
       "code": [
-        "# Create linear regression object",
+        "# Create LinearRegression object and train",
         "linear_reg = LinearRegression()",
-        "# Train the model using the training sets",
         "linear_reg.fit(X_train, y_train)"
       ]
     },
@@ -15,50 +14,63 @@
       "name": "Logistic Regression",
       "imports": ["from sklearn.linear_model import LogisticRegression"],
       "code": [
-        "# Create logistic regression object",
+        "# Create LogisticRegression object and train",
         "logistic_reg = LogisticRegression()",
-        "# Train the model using the training sets",
         "logistic_reg.fit(X_train, y_train)"
       ]
     },
     "decisionTree": {
-      "name": "Decision Tree",
+      "name": "Decision Tree Regressor",
       "imports": ["from sklearn.tree import DecisionTreeRegressor"],
       "code": [
-        "# Create tree object",
+        "# Create DecisionTreeRegressor object and train",
         "tree_reg = DecisionTreeRegressor()",
-        "# Train the model using the training sets",
         "tree_reg.fit(X_train, y_train)"
       ]
     },
+    "randomForestRegressor": {
+      "name": "Random Forest Regressor",
+      "imports": ["from sklearn.ensemble import RandomForestRegressor"],
+      "code": [
+        "# Create RandomForestRegressor object and train",
+        "rf_reg = RandomForestRegressor ()",
+        "rf_reg.fit(X_train, y_train)"
+      ]
+    },
     "svm": {
-      "name": "SVM",
+      "name": "SVM Classifier",
       "imports": ["from sklearn import svm"],
       "code": [
-        "# Create SVM classification object",
-        "svm_model = svm.svc()",
-        "# Train the model using the training sets",
-        "svm_model.fit(X_train, y_train)"
+        "# Create SVM classification object and train",
+        "svm_clf = svm.svc()",
+        "svm_clf.fit(X_train, y_train)"
       ]
     },
-    "knn": {
-      "name": "KNN",
+    "sgd": {
+      "name": "SGD Classifier",
+      "imports": ["from sklearn.linear_model import SGDClassifier"],
+      "code": [
+        "# Create SGDClassifier object and train",
+        "sgd_clf = SGDClassifier(random_state=42)",
+        "sgd_clf.fit(X_train, y_train)"
+      ]
+    },
+    "randomForestClassifier": {
+      "name": "Random Forest Classifier",
+      "imports": ["from sklearn.ensemble import RandomForestClassifier"],
+      "code": [
+        "# Create RandomForestClassifier object and train",
+        "rf_clf = RandomForestClassifier(random_state=42)",
+        "rf_clf.fit(X_train, y_train)"
+      ]
+    },
+    "kNeighbors": {
+      "name": "K-Neighbors Classifier",
       "imports": ["from sklearn.neighbors import KNeighborsClassifier"],
       "code": [
-        "# Create KNeighbors classifier object model",
-        "kn_model = KNeighborsClassifier(n_neighbors=6) # 5 is default",
-        "# Train the model using the training sets",
-        "kn_model.fit(X_train, y_train)"
-      ]
-    },
-    "k-means": {
-      "name": "K-Means",
-      "imports": ["from sklearn.cluster import KMeans"],
-      "code": [
-        "# Create KMeans classifier object model",
-        "kmeans_model = KMeans(n_clusters=4, random_state=0)",
-        "# Train the model using the training sets",
-        "kmeans_model.fit(X_train)"
+        "# Create KNeighborsClassifier object and train",
+        "kn_clf = KNeighborsClassifier(n_neighbors=6) # 5 is default",
+        "kn_clf.fit(X_train, y_train)"
       ]
     }
   }
