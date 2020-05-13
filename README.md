@@ -37,18 +37,22 @@ HTML5
 
 -----
 
-#### Screens
+## Walkthrough
+
+### 1. Select the Approach
 
 <p align="center">
 <img src="./resources/img/screens/screen1.png" alt="screen1" width="900" height="520"/>
 <p>
-  
-  
+ 
+### 2. Configure
+
 <p align="center">
 <img src="./resources/img/screens/screen2.png" alt="screen2" width="900" height="520"/>
 <p>
   
-  
+### 3. Code is ready
+
 <p align="center">
 <img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="520"/>
 <p>
