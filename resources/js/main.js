@@ -60,12 +60,16 @@ $(function(){
         $('#preconfig-regression').click(function(){
             fillDefaultModules('regression');
             $('#regression-models').show();
+            $("#models").find("h3").html("Model (Regression)");
+
             $('#classification-models').hide();
         });
 
         $('#preconfig-classification').click(function(){
             fillDefaultModules('classification');
             $('#regression-models').hide();
+            $("#models").find("h3").html("Model (Classification)");
+
             $('#classification-models').show();
         });
 
