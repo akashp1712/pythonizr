@@ -6,14 +6,18 @@ $(function(){
 
     var urlPreProcessing = "resources/data/pre-processing.json";
     var urlModels = "resources/data/models.json";
+    var urlPostProcessing = "resources/data/post-processing.json";
 
-    var dataPreProcessing, dataModels;
+    var dataPreProcessing, dataModels, dataPostProcessing;
     $.when(
         $.getJSON(urlPreProcessing, function(data) {
             dataPreProcessing = data;
         }),
         $.getJSON(urlModels, function(data) {
             dataModels = data;
+        }),
+        $.getJSON(urlPostProcessing, function(data) {
+            dataPostProcessing = data;
         })
     ).then(function() {
         if (dataPreProcessing && dataModels) {
@@ -31,12 +35,14 @@ $(function(){
                 regression: [
                     'dataLoading',
                     'trainTestSplit',
-                    'linearReg'
+                    'linearReg',
+                    'mae'
                 ],
                 classification: [
                     'dataLoading',
                     'trainTestSplit',
-                    'svm'
+                    'svm',
+                    'accuracyScore'
                 ]
             },
         };
@@ -59,18 +65,12 @@ $(function(){
 
         $('#preconfig-regression').click(function(){
             fillDefaultModules('regression');
-            $('#regression-models').show();
-            $("#models").find("h3").html("Model (Regression)");
-
-            $('#classification-models').hide();
+            loadRegressionData();
         });
 
         $('#preconfig-classification').click(function(){
             fillDefaultModules('classification');
-            $('#regression-models').hide();
-            $("#models").find("h3").html("Model (Classification)");
-
-            $('#classification-models').show();
+            loadClassificationData();
         });
 
         /*********
@@ -85,6 +85,26 @@ $(function(){
             };
             update();
             $('#hidden-section').fadeIn('slow');
+        }
+
+        function loadRegressionData() {
+            $("#models").find("h3").html("Model (Regression)");
+            $('#regression-models').show();
+            $('#classification-models').hide();
+
+            $("#post-processing").find("h3").html("Post-processing (Regression)");
+            $('#regression-techniques').show();
+            $('#classification-techniques').hide();
+        }
+
+        function loadClassificationData() {
+            $("#models").find("h3").html("Model (Classification)");
+            $('#regression-models').hide();
+            $('#classification-models').show();
+
+            $("#post-processing").find("h3").html("Post-processing (Classification)");
+            $('#regression-techniques').hide();
+            $('#classification-techniques').show();
         }
 
         function update(){
@@ -117,8 +137,12 @@ $(function(){
                 pipelineData["models"].push(dataModels["data"][value]["name"]); // Add pipeline component
             });
 
+            pipelineData["post-processing"] = [dataPostProcessing["name"]];
             $("#post-processing").find("input:checked").each(function() {
-                // TODO: do same as above
+                var value = $(this).val();
+                importList.push(dataPostProcessing["data"][value]["imports"]); // Add imports
+                codeList.push(dataPostProcessing["data"][value]["code"]); // Add code
+                pipelineData["post-processing"].push(dataPostProcessing["data"][value]["name"]); // Add pipeline component
             });
         }
 
@@ -159,7 +183,6 @@ $(function(){
             x[0].innerHTML = '';
 
             var keys = Object.keys(pipelineData);
-            var animatedLine = getAnimatedLine();
             var needLine = false;
 
             for (var i = 0, pipeKey; pipeKey = keys[i++];){
@@ -187,7 +210,7 @@ $(function(){
 
                     if (needLine == true) {
                        // Append the animated line before every pipe except first
-                        x[0].appendChild(animatedLine);
+                        x[0].appendChild(getAnimatedLine());
                     }
 
                     x[0].appendChild(dataPipe);
