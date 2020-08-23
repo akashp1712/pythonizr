@@ -6,8 +6,8 @@
       "imports": ["from sklearn.linear_model import LinearRegression"],
       "code": [
         "# Create LinearRegression object and train",
-        "linear_reg = LinearRegression()",
-        "linear_reg.fit(X_train, y_train)"
+        "reg = LinearRegression()",
+        "reg.fit(X_train, y_train)"
       ]
     },
     "logisticReg": {
@@ -15,8 +15,8 @@
       "imports": ["from sklearn.linear_model import LogisticRegression"],
       "code": [
         "# Create LogisticRegression object and train",
-        "logistic_reg = LogisticRegression()",
-        "logistic_reg.fit(X_train, y_train)"
+        "reg = LogisticRegression()",
+        "reg.fit(X_train, y_train)"
       ]
     },
     "decisionTree": {
@@ -24,8 +24,8 @@
       "imports": ["from sklearn.tree import DecisionTreeRegressor"],
       "code": [
         "# Create DecisionTreeRegressor object and train",
-        "tree_reg = DecisionTreeRegressor()",
-        "tree_reg.fit(X_train, y_train)"
+        "reg = DecisionTreeRegressor()",
+        "reg.fit(X_train, y_train)"
       ]
     },
     "randomForestRegressor": {
@@ -33,8 +33,8 @@
       "imports": ["from sklearn.ensemble import RandomForestRegressor"],
       "code": [
         "# Create RandomForestRegressor object and train",
-        "rf_reg = RandomForestRegressor ()",
-        "rf_reg.fit(X_train, y_train)"
+        "reg = RandomForestRegressor ()",
+        "reg.fit(X_train, y_train)"
       ]
     },
     "svm": {
@@ -42,8 +42,8 @@
       "imports": ["from sklearn import svm"],
       "code": [
         "# Create SVM classification object and train",
-        "svm_clf = svm.svc()",
-        "svm_clf.fit(X_train, y_train)"
+        "clf = svm.svc()",
+        "clf.fit(X_train, y_train)"
       ]
     },
     "sgd": {
@@ -51,8 +51,8 @@
       "imports": ["from sklearn.linear_model import SGDClassifier"],
       "code": [
         "# Create SGDClassifier object and train",
-        "sgd_clf = SGDClassifier(random_state=42)",
-        "sgd_clf.fit(X_train, y_train)"
+        "clf = SGDClassifier(random_state=42)",
+        "clf.fit(X_train, y_train)"
       ]
     },
     "randomForestClassifier": {
@@ -60,8 +60,8 @@
       "imports": ["from sklearn.ensemble import RandomForestClassifier"],
       "code": [
         "# Create RandomForestClassifier object and train",
-        "rf_clf = RandomForestClassifier(random_state=42)",
-        "rf_clf.fit(X_train, y_train)"
+        "clf = RandomForestClassifier(random_state=42)",
+        "clf.fit(X_train, y_train)"
       ]
     },
     "kNeighbors": {
@@ -69,8 +69,8 @@
       "imports": ["from sklearn.neighbors import KNeighborsClassifier"],
       "code": [
         "# Create KNeighborsClassifier object and train",
-        "kn_clf = KNeighborsClassifier(n_neighbors=6) # 5 is default",
-        "kn_clf.fit(X_train, y_train)"
+        "clf = KNeighborsClassifier(n_neighbors=6) # 5 is default",
+        "clf.fit(X_train, y_train)"
       ]
     }
   }
