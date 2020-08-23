@@ -81,7 +81,7 @@
                             <label><input type="checkbox" value="dataLoading" disabled="disabled">Data loading
                                 <a class="more_info"><span class="tooltiptext">TODO: more info</span></a>
                             </label>
-			    <label><input type="checkbox" value="normalization">Normalization</label>
+                            <label><input type="checkbox" value="normalization">Normalization</label>
                             <label><input type="checkbox" value="trainTestSplit">Train-Test split</label>
                         </div>
                         <div id="models" class="customize-section">
@@ -101,9 +101,17 @@
                             </div>
                         </div>
                         <div id="post-processing" class="customize-section">
-                            <h3>Post-processing (coming soon..)</h3>
-                            <label><input type="checkbox" value="gitignore" disabled="disabled">Evaluate Performance</label>
-                            <label><input type="checkbox" value="gitignore" disabled="disabled">Model Tuning</label>
+                            <h3>Post-processing</h3>
+                            <div id="regression-techniques">
+                                <label><input type="radio" name="regression_techniques" value="mae">Mean Absolute Error</label>
+                                <label><input type="radio" name="regression_techniques" value="mse">Mean Squared Error</label>
+                                <label><input type="radio" name="regression_techniques" value="r2Score">R² Score</label>
+                            </div>
+
+                            <div id="classification-techniques">
+                                <label><input type="radio" name="classification_techniques" value="accuracyScore">Accuracy Score</label>
+                                <label><input type="radio" name="classification_techniques" value="confusionMatrix">Confusion Matrix</label>
+                            </div>
                         </div>
                     </div>
                     <h2 class="separator">3 - Code</h2>
