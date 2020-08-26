@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="resources/css/pipeline.css">
 	<link rel="stylesheet" href="resources/css/highlight-theme.css">
 	<link rel="stylesheet" href="resources/css/loader.css">
+    	<script src="https://kit.fontawesome.com/a016e6e138.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -63,7 +64,6 @@
                         <button id="preconfig-regression" class="preconfig-block initializr-background clearfix">
                             <h3>Regression</h3>
                         </button>
-                        <div class="preconfig-links-container"><!--<a target="_blank" href="#" class="first">Preview</a>--></div>
                     </div>
                     <div class="preconfig-container web-background">
                         <button id="preconfig-classification" class="preconfig-block blank-background clearfix">
@@ -125,13 +125,10 @@
                     <!--<div id="download-section" class="clearfix">
                         <a id="download-link" href="#" onclick="download()">View Code!</a>
                     </div>-->
-                    <div>
                     <pre id='codeblock'>
                       <code id='code' class='python'></code>
                         <!--TODO: Add copy button to copy the code-->
                     </pre>
-
-                </div>
                 </div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
@@ -193,6 +190,8 @@
   hljs.initHighlightingOnLoad();
   hljs.configure({useBR: true});
 </script>
+
+<script src="https://unpkg.com/highlightjs-badge/highlightjs-badge.min.js"></script>
 
 <!--[if lt IE 7 ]>
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
