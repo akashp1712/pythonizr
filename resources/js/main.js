@@ -51,7 +51,6 @@ $(function(){
            VARIABLES
          ************/
 
-
         var codeList = [];
         var pipelineData = {};
 
@@ -83,8 +82,10 @@ $(function(){
             for (var i = 0, curModule; curModule = config.defaultModules[type][i++];){
                 $('input[value=' + curModule +']').attr('checked', true);
             };
+
             update();
             $('#hidden-section').fadeIn('slow');
+            highlightBadge(); // Add badge for copy to clipboard
         }
 
         function loadRegressionData() {
@@ -148,76 +149,63 @@ $(function(){
 
         function updateCode() {
 
-            var codeFull = [];
-
             // Include all the imports
-            for (var i = 0, code; code = importList[i++];){
-                codeFull = codeFull.concat(code);
-            }
+            var codeFull = [];
+            for (var i = 0, code; code = importList[i++];){codeFull = codeFull.concat(code);}
 
             // Include all the code
             for (var i = 0, code; code = codeList[i++];){
                 codeFull = codeFull.concat([""]);
                 codeFull = codeFull.concat(code);
             }
-
             displayData(codeFull);
 
             // Display the list of code lines
             function displayData(codeLines) {
-                // Display the data
                 var codeElem = "";
-
-                codeLines.forEach(function(value) {
-                    codeElem = codeElem + value + "<br>";
-                });
-
+                codeLines.forEach(function(value) {codeElem = codeElem + value + "<br>";});
                 $("#code").html(codeElem);
                 $('pre code').each(function(i, e) {hljs.highlightBlock(e);}); // highlight the code
             }
         }
 
-        function updatePipeline() {
+        function highlightBadge() {
+            var options = {   // optional
+               copyIconClass: "fas fa-copy",
+               checkIconClass: "fas fa-check text-success"
+            };
+            window.highlightJsBadge(options);
+        }
 
+        function updatePipeline() {
             var x = document.getElementsByClassName("container__sources");
             x[0].innerHTML = '';
-
             var keys = Object.keys(pipelineData);
             var needLine = false;
 
             for (var i = 0, pipeKey; pipeKey = keys[i++];){
-
-                // Create div for each block
-                var dataPipe=document.createElement('div');
+                var dataPipe=document.createElement('div'); // Create div for each block
                 dataPipe.className = "step";
                 dataPipe.innerHTML = '';
-
                 pipeData = pipelineData[pipeKey];
 
                 if (pipeData.length > 1) { // Pipe has some function (1 is header)
-
-                    // Add header
-                    var header = document.createElement('h3');
+                    var header = document.createElement('h3'); // Add header
                     header.innerHTML = pipeData[0];
                     dataPipe.appendChild(header);
 
-                    // Add each added element
-                    for (var j = 1, value; value = pipeData[j++];) {
+                    for (var j = 1, value; value = pipeData[j++];) { // Add each added element
                         var p = document.createElement('p');
                         p.innerHTML = value;
                         dataPipe.appendChild(p);
                     }
 
-                    if (needLine == true) {
-                       // Append the animated line before every pipe except first
-                        x[0].appendChild(getAnimatedLine());
-                    }
-
+                     // Append the animated line before every pipe except first
+                    if (needLine == true) {x[0].appendChild(getAnimatedLine());}
                     x[0].appendChild(dataPipe);
                     needLine = true;
                 }
             }
-
 
             function getAnimatedLine() {
                 var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
