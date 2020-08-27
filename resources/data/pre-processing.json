@@ -4,17 +4,25 @@
     "dataLoading": {
       "name": "Data Loading",
       "imports": ["import pandas as pd"],
+      "global": [
+        "DATASET_URL = '' # set the url or local reference",
+        "FEATURE_NAME = '' # set target feature name"
+      ],
       "code": [
-        "# Load red wine data.",
-        "dataset_url = '' #TODO: set the url or local reference",
-        "data = pd.read_csv(dataset_url, sep=';')",
-        "y = data.FEATURE_NAME #TODO: repalce FEATURE_NAME with the one you want to predict",
-        "X = data.drop('FEATURE_NAME', axis=1) #TODO: remove the FEATURE_NAME from the data"
+        "def load_data():",
+        "    data = pd.read_csv(DATASET_URL, sep=';') # implement the custom logic here",
+        "    return data",
+        "",
+        "# load the data and separate out the target feature data",
+        "data = load_data()",
+        "y = data[FEATURE_NAME]",
+        "X = data.drop(FEATURE_NAME, axis=1)"
       ]
     },
     "normalization": {
       "name": "Normalization",
       "imports": ["from sklearn.preprocessing import scale"],
+      "global": [],
       "code": [
         "X = scale(X)"
       ]
@@ -22,9 +30,12 @@
     "trainTestSplit": {
       "name": "Train Test Splitting",
       "imports": ["from sklearn.model_selection import train_test_split"],
+      "global": [
+        "TEST_SIZE = 0.2"
+      ],
       "code": [
         "# Split data into training and test sets",
-        "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123, stratify=y)"
+        "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=123, stratify=y)"
       ]
     }
   }
