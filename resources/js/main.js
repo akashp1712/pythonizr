@@ -116,6 +116,7 @@ $(function(){
 
         function updateModules(){
             importList = [];
+            globalList = []
             codeList = [];
             pipelineData = {};
 
@@ -125,6 +126,7 @@ $(function(){
                 var value = $(this).val();
                 if (value != "none") {
                     importList.push(dataPreProcessing["data"][value]["imports"]); // Add imports
+                    globalList.push(dataPreProcessing["data"][value]["global"]); // Add global variables
                     codeList.push(dataPreProcessing["data"][value]["code"]); // Add code
                     pipelineData["pre-processing"].push(dataPreProcessing["data"][value]["name"]); // Add pipeline component
                 }
@@ -134,6 +136,7 @@ $(function(){
             $("#models").find("input:checked").each(function() {
                 var value = $(this).val();
                 importList.push(dataModels["data"][value]["imports"]); // Add imports
+                globalList.push(dataModels["data"][value]["global"]); // Add global variables
                 codeList.push(dataModels["data"][value]["code"]); // Add code
                 pipelineData["models"].push(dataModels["data"][value]["name"]); // Add pipeline component
             });
@@ -152,6 +155,10 @@ $(function(){
             // Include all the imports
             var codeFull = [];
             for (var i = 0, code; code = importList[i++];){codeFull = codeFull.concat(code);}
+
+            codeFull = codeFull.concat([""]);
+            // Include all the global variables
+            for (var i = 0, code; code = globalList[i++];){codeFull = codeFull.concat(code);}
 
             // Include all the code
             for (var i = 0, code; code = codeList[i++];){
@@ -250,6 +257,5 @@ $(function(){
             $('#hidden-section').fadeIn(0);
 
         update();
-
     }
 });
