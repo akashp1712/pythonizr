@@ -4,6 +4,7 @@
     "linearReg": {
       "name": "Linear Regression",
       "imports": ["from sklearn.linear_model import LinearRegression"],
+      "global": [],
       "code": [
         "# Create LinearRegression object and train",
         "reg = LinearRegression()",
@@ -13,6 +14,7 @@
     "logisticReg": {
       "name": "Logistic Regression",
       "imports": ["from sklearn.linear_model import LogisticRegression"],
+      "global": [],
       "code": [
         "# Create LogisticRegression object and train",
         "reg = LogisticRegression()",
@@ -22,6 +24,7 @@
     "decisionTree": {
       "name": "Decision Tree Regressor",
       "imports": ["from sklearn.tree import DecisionTreeRegressor"],
+      "global": [],
       "code": [
         "# Create DecisionTreeRegressor object and train",
         "reg = DecisionTreeRegressor()",
@@ -31,6 +34,7 @@
     "randomForestRegressor": {
       "name": "Random Forest Regressor",
       "imports": ["from sklearn.ensemble import RandomForestRegressor"],
+      "global": [],
       "code": [
         "# Create RandomForestRegressor object and train",
         "reg = RandomForestRegressor ()",
@@ -40,6 +44,7 @@
     "svm": {
       "name": "SVM Classifier",
       "imports": ["from sklearn import svm"],
+      "global": [],
       "code": [
         "# Create SVM classification object and train",
         "clf = svm.svc()",
@@ -49,27 +54,36 @@
     "sgd": {
       "name": "SGD Classifier",
       "imports": ["from sklearn.linear_model import SGDClassifier"],
+      "global": [
+        "RANDOM_STATE = 42"
+      ],
       "code": [
         "# Create SGDClassifier object and train",
-        "clf = SGDClassifier(random_state=42)",
+        "clf = SGDClassifier(random_state=RANDOM_STATE)",
         "clf.fit(X_train, y_train)"
       ]
     },
     "randomForestClassifier": {
       "name": "Random Forest Classifier",
       "imports": ["from sklearn.ensemble import RandomForestClassifier"],
+      "global": [
+        "RANDOM_STATE = 42"
+      ],
       "code": [
         "# Create RandomForestClassifier object and train",
-        "clf = RandomForestClassifier(random_state=42)",
+        "clf = RandomForestClassifier(random_state=RANDOM_STATE)",
         "clf.fit(X_train, y_train)"
       ]
     },
     "kNeighbors": {
       "name": "K-Neighbors Classifier",
       "imports": ["from sklearn.neighbors import KNeighborsClassifier"],
+      "global": [
+        "NEIGHBORS = 6"
+      ],
       "code": [
         "# Create KNeighborsClassifier object and train",
-        "clf = KNeighborsClassifier(n_neighbors=6) # 5 is default",
+        "clf = KNeighborsClassifier(n_neighbors=NEIGHBORS) # 5 is default",
         "clf.fit(X_train, y_train)"
       ]
     }
