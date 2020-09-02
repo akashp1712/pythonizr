@@ -30,6 +30,8 @@ HTML5
 
 - Vanilla Javascript
 - [jquery](https://jquery.com/)
+- [highilighjs](https://highlightjs.org/) for code highlighting
+- [highlightjs-badge](https://github.com/RickStrahl/highlightjs-badge)
 
 #### CSS
 
@@ -56,3 +58,17 @@ HTML5
 <p align="center">
 <img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="720"/>
 <p>
+
+
+-----
+## Credits
+
+I owe bunch of thanks to the follwoing people
+ - [Initializr by Jonathan Verrecchia](http://initializr.com)
+ - [Extensionizr by Alex Wolkov](https://extensionizr.com)
+ - All the contributors of [highlight.js](https://highlightjs.org/)
+ - [highlightjs-badge](https://github.com/RickStrahl/highlightjs-badge) by Rick Strahl
+ - Github octocat svg by [Sarah Drasner](https://github.com/sdras)
+
+ 
+ 
