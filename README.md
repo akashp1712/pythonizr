@@ -54,5 +54,5 @@ HTML5
 ### 3. Code is ready
 
 <p align="center">
-<img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="620"/>
+<img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="720"/>
 <p>
