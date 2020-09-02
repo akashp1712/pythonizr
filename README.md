@@ -1,6 +1,8 @@
-
+<p align="center">
+<img src="./resources/img/screens/screen0.png" alt="screen1" width="900" height="320"/>
+<p>
+ 
 # Pythonizr - https://pythonizr.com
-
 
 * [Motivation](#motivation)
 * [Requirements](#requirements)
