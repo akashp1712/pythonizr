@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./resources/img/screens/screen0.png" alt="screen1" width="900" height="120"/>
+<img src="./resources/img/screens/screen0.png" alt="screen1" height="150"/>
 <p>
  
 # Pythonizr - https://pythonizr.com
