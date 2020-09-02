@@ -48,11 +48,11 @@ HTML5
 ### 2. Configure
 
 <p align="center">
-<img src="./resources/img/screens/screen2.png" alt="screen2" width="900" height="520"/>
+<img src="./resources/img/screens/screen2.png" alt="screen2" width="900" height="420"/>
 <p>
   
 ### 3. Code is ready
 
 <p align="center">
-<img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="520"/>
+<img src="./resources/img/screens/screen3.png" alt="screen3" width="900" height="620"/>
 <p>
