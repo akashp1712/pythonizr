@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap');
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 html { font-size: 100%; overflow-y: scroll; overflow-x: hidden; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -50,38 +51,13 @@ table { border-collapse: collapse; border-spacing: 0; }
   content: attr(placeholder);
 }
 
-
-@font-face {
-    font-family: 'ChunkFiveRegular';
-    src: url('fonts/Chunkfive-webfont.eot');
-    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Chunkfive-webfont.woff') format('woff'),
-         url('fonts/Chunkfive-webfont.ttf') format('truetype'),
-         url('fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LeagueGothicRegular';
-    src: url('fonts/League_Gothic-webfont.eot');
-    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/League_Gothic-webfont.woff') format('woff'),
-         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
-         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
 /* =======  ============================================
     Initializr styles
     http://verekia.com/initializr/responsive-template
     Author: Jonathan Verrecchia
    =================================================== */
 
-body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
+body{ font:17px/27px Helvetica, Helvetica Neue, Arial; }
 
 .wrapper{
 	width:90%;
@@ -104,7 +80,7 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 
 #title{
 	color:white;
-	font-family:'ChunkFiveRegular';
+	font-family: 'Barlow', sans-serif;
 	font-weight:normal;
 	font-size:4em;
 	margin-bottom:20px;
@@ -180,10 +156,10 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 
 
 .separator{
-	font-family:LeagueGothicRegular;
+	font-family: 'Barlow', sans-serif;
 	text-align:center;
 	font-weight:normal;
-	font-size:3em;
+	font-size:2.58em;
 	color:#087F8C;
 	margin:50px 0;
 }
@@ -290,7 +266,7 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 #download-section a
 {
 	font-weight:normal;
-	font-family:ChunkFiveRegular;
+	font-family: 'Barlow', sans-serif;
 	font-size:2em;
 	color:white;
 	margin:0;
@@ -358,8 +334,8 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 .customize-section h3{
 	text-align:center;
 	font-weight:normal;
-	font-family:LeagueGothicRegular;
-	font-size:2em;
+	font-family: 'Barlow', sans-serif;
+	font-size:1.7em;
 }
 
 .second-h5bp-label,
@@ -397,7 +373,7 @@ textarea{
 
 #about-container h3{
 	font-weight:normal;
-	font-family:LeagueGothicRegular;
+	font-family: 'Barlow', sans-serif;
 	font-size:2em;
 }
 
