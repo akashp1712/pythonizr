@@ -1,5 +1,5 @@
 
-# Pythonizr2 - https://pythonizr.com
+# Pythonizr - https://pythonizr.com
 
 
 * [Motivation](#motivation)
