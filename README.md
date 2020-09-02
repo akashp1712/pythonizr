@@ -4,6 +4,11 @@
  
 # Pythonizr - https://pythonizr.com
 
+![GitHub](https://img.shields.io/github/license/akashp1712/pythonizr)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
+![Website](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fpythonizr.com)
+
+
 * [Motivation](#motivation)
 * [Requirements](#requirements)
 * [Installation](#installation)
