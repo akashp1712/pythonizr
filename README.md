@@ -3,8 +3,6 @@
 <p>
  
 # Pythonizr - https://pythonizr.com
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
-
 
 ![GitHub](https://img.shields.io/github/license/akashp1712/pythonizr)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
