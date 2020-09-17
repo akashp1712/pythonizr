@@ -40,7 +40,7 @@
   stroke-width: 3px;
   stroke-linecap: round;
   stroke-dasharray: 2px 20px;
-  /* animation: animateline 5s linear both infinite; */
+  /*animation: animateline 5s linear both infinite;*/
 }
 
 .container .step {
@@ -68,10 +68,10 @@
   background: #ffffff;
   position: relative;
 }
-.container__sources:before {
+/*.container__sources:before {
   background: #4B8BBE;
   content: 'Pipeline';
-}
+}*/
 .container__sources div {
   text-align: left;
   margin: 0 1rem;
