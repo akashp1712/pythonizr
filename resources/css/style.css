@@ -510,6 +510,7 @@ textarea{
 	#intro p{
 	float:left;
 	/*margin-right:285px;*/
+	font-size: 1.1em;
 	}
 
 	#badges{
