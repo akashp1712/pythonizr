@@ -1,18 +1,25 @@
 <p align="center">
 <img src="./resources/img/screens/screen0.png" alt="screen1" height="130"/>
 <p>
- 
+
 # Pythonizr - https://pythonizr.com
 
 ![GitHub](https://img.shields.io/github/license/akashp1712/pythonizr)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
 ![Website](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fpythonizr.com)
 
+<p align="center">
+  <kbd>
+<img src="pythonizr-scroll.gif" width="960"></img>
+  </kbd>
+</p>
 
 * [Motivation](#motivation)
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Language And Tools](#language-and-tools)
+* [Credits](#credits)
+* [License](#license)
 * [Contribution](#contribution)
 
 ### Motivation
@@ -77,9 +84,7 @@ I owe bunch of thanks to the follwoing people
  - [highlightjs-badge](https://github.com/RickStrahl/highlightjs-badge) by Rick Strahl
  - Github octocat svg by [Sarah Drasner](https://github.com/sdras)
 
- 
- 
-
+ -----
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_large)
