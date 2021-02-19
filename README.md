@@ -1,8 +1,5 @@
-<p align="center">
-<img src="./resources/img/screens/screen0.png" alt="screen1" height="130"/>
-<p>
-
-# Pythonizr - https://pythonizr.com
+# Pythonizr - Machine Learning Code generator
+## https://pythonizr.com
 
 ![GitHub](https://img.shields.io/github/license/akashp1712/pythonizr)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
@@ -13,6 +10,8 @@
 <img src="pythonizr-scroll.gif" width="960"></img>
   </kbd>
 </p>
+
+-----
 
 * [Motivation](#motivation)
 * [Requirements](#requirements)
