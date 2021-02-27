@@ -54,9 +54,7 @@
     "sgd": {
       "name": "SGD Classifier",
       "imports": ["from sklearn.linear_model import SGDClassifier"],
-      "global": [
-        "RANDOM_STATE = 42"
-      ],
+      "global": ["RANDOM_STATE = 42"],
       "code": [
         "# Create SGDClassifier object and train",
         "clf = SGDClassifier(random_state=RANDOM_STATE)",
@@ -66,9 +64,7 @@
     "randomForestClassifier": {
       "name": "Random Forest Classifier",
       "imports": ["from sklearn.ensemble import RandomForestClassifier"],
-      "global": [
-        "RANDOM_STATE = 42"
-      ],
+      "global": ["RANDOM_STATE = 42"],
       "code": [
         "# Create RandomForestClassifier object and train",
         "clf = RandomForestClassifier(random_state=RANDOM_STATE)",
@@ -78,9 +74,7 @@
     "kNeighbors": {
       "name": "K-Neighbors Classifier",
       "imports": ["from sklearn.neighbors import KNeighborsClassifier"],
-      "global": [
-        "NEIGHBORS = 6"
-      ],
+      "global": ["NEIGHBORS = 6"],
       "code": [
         "# Create KNeighborsClassifier object and train",
         "clf = KNeighborsClassifier(n_neighbors=NEIGHBORS) # 5 is default",

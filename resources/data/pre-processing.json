@@ -23,16 +23,12 @@
       "name": "Normalization",
       "imports": ["from sklearn.preprocessing import scale"],
       "global": [],
-      "code": [
-        "X = scale(X)"
-      ]
+      "code": ["X = scale(X)"]
     },
     "trainTestSplit": {
       "name": "Train Test Splitting",
       "imports": ["from sklearn.model_selection import train_test_split"],
-      "global": [
-        "TEST_SIZE = 0.2"
-      ],
+      "global": ["TEST_SIZE = 0.2"],
       "code": [
         "# Split data into training and test sets",
         "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=123, stratify=y)"
