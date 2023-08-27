@@ -1,5 +1,5 @@
-# Pythonizr - Machine Learning Code generator
-## https://pythonizr.com
+## Pythonizr - Machine Learning Code generator
+### https://akashp1712.github.io/pythonizr/
 
 ![GitHub](https://img.shields.io/github/license/akashp1712/pythonizr)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakashp1712%2Fpythonizr?ref=badge_shield)
